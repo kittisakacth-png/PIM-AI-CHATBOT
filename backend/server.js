@@ -34,7 +34,6 @@ res.send("PIM AI Assistant API Running");
 
 app.post("/ask", async (req, res) => {
 
-```
 try {
 
     const question = req.body.question;
@@ -43,7 +42,6 @@ try {
     const context = searchRelevant(question);
 
     const prompt = `
-```
 
 You are an AI assistant.
 
@@ -56,7 +54,6 @@ Question:
 ${question}
 `;
 
-```
     const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: prompt
@@ -75,7 +72,6 @@ ${question}
     });
 
 }
-```
 
 });
 
